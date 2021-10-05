@@ -1,0 +1,10 @@
+.mega-grid {
+  background-color: #eeeeee;
+  display: grid;
+  grid-template-rows: 100px 600px 100px;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "N"
+    "C"
+    "F";
+}
