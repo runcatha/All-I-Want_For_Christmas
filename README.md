@@ -203,7 +203,7 @@ src
 | StartGroup Component/Screen   |    L     |     3 hrs      |      TBD      |     TBD     |
 | Deploy Netlify                |    H     |     2 hrs      |      TBD      |     TBD     |
 | Post MVP                      |    L     |      TBD       |      TBD      |     TBD     |
-| TOTAL                         |          |     60 hrs      |    12 hrs     |     TBD     |
+| TOTAL                         |          |     60 hrs     |    12 hrs     |     TBD     |
 
 <br>
 
@@ -211,7 +211,7 @@ src
 
 #### ERD Model
 
-![image](https://user-images.githubusercontent.com/87097080/135940106-30263cbf-2520-4332-b8c7-a1d2ffcff649.png)
+[Imgur](https://i.imgur.com/gYaUMhv.png)
 <br>
 
 ---
@@ -231,4 +231,3 @@ src
 ## Code Issues & Resolutions
 
 > Use this section to list of all major issues encountered and their resolution.
-
