@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:show, :update, :destroy]
-  before_action :authorize_request, only: [:create, :update, :destroy] 
+  before_action :set_group, only: [:show, :update, :destroy, :add_user_to_group]
+  before_action :authorize_request, only: [:create, :update, :destroy, :add_user_to_group] 
 
   # GET /groups
   def index
@@ -11,7 +11,7 @@ class GroupsController < ApplicationController
 
   # GET /groups/1
   def show
-    render json: @group, include :users 
+    render json: @group, include: :users
   end
 
   # POST /groups
@@ -42,10 +42,8 @@ class GroupsController < ApplicationController
 
   # adding user to group method goes here
   def add_user_to_group
-    @group = Group.find(params[:id])
-    @user = User.find(params[:user_id])
-
-    @group.users << @user
+    
+    @group.users << @current_user
 
     render json: @group, include: :users
   end
