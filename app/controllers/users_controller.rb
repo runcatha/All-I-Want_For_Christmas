@@ -13,6 +13,7 @@ class UsersController < ApplicationController
       render json: @user.errors, status: :unprocessable_entity
     end
   end
+  
   private
 
   def user_params
