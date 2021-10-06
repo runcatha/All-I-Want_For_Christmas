@@ -52,7 +52,7 @@ const App = () => {
             <Cart user={user} />
           </Route>
           <Route path='/gift'>
-            <Detail user={user} />
+            <Gift user={user} />
           </Route>
           <Route path='add-gift'>
             <AddGift user={user} />

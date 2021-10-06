@@ -29,34 +29,15 @@ const GiftDetail = (props) => {
     };
     fetchGift();
   }, [id, toggleFetch]);
-  }
-
-  const handleSubmit = async (event) => {
-    if (user !== null) {
-      event.preventDefault()
-      laptop.reviews.push(review)
-      setLaptop(laptop)
-      await updateLaptop(id, laptop)
-      setToggleFetch((toggleFetch) => !toggleFetch)
-      setReview({
-        author: '',
-        rating: '',
-        description: '',
-      })
-      history.push('/laptops/:id')
-    } else {
-      alert('Please sign in first')
-      history.push('/sign-in')
-    }
-  }
+  
 
   const handleDelete = async (event) => {
     event.preventDefault()
-    await deleteLaptop(id, laptop)
+    await deleteGift(id, gift)
     setUpdated(true)
   }
   if (isUpdated) {
-    return <Redirect to={'/laptops'} />
+    return <Redirect to={'/gifts'} />
   }
   if (!isLoaded) {
     return <h1>Loading...</h1>;
@@ -64,67 +45,37 @@ const GiftDetail = (props) => {
 
   return (
     <Layout user={user}>
-      <div className="laptop-detail">
+      <div className="gift-detail">
         <div className="detail">
-          <h1>Description</h1>
-          <div className="description">{laptop.description}</div>
-          <h1>Specifications</h1>
-          <h2>Processor: {laptop.processor}</h2>
-          <h2>Hard Drive: {laptop.hardrive}</h2>
-          <h2>Memory: {laptop.memory}</h2>
+          <h1>{gift.name}</h1>
+          <img
+            className="gift-detail-image"
+            src={gift.image_url}
+            alt={gift.name}
+          />
+          <h2>${gift.price}</h2>
           <div className='directLinkbutton'>
-            <a className='linkbutton' href={laptop.buy_link}>Click to Buy</a>
+            <a className='linkbutton' href={gift.buy_link}>Link to Buy</a>
           </div>
         </div>
-        <div className="secondhalf">
-          <img
-            className="laptop-detail-image"
-            src={laptop.image_url}
-            alt={laptop.name}
-          />
-          <div className='detail'>
-            <div className='name'>{laptop.name}</div>
-            <div className='rating'>
-              <StarRating
-                size={laptop.rating}
-                value={laptop.rating}
-                onChange={function (val) {
-                  // console.log(val)
-                }}
-              />
-            </div>
+            {/* </div> */}
             <h2 className="price">Price: {`$${laptop.price}`}</h2>
             <div className="button-container">
-              <Link className="edit-button" to={`/laptops/${laptop._id}/edit`}>
+              <Link className="edit-button" to={`/gifts/${gift._id}/edit`}>
                 <button className="editbutton">Edit</button>
               </Link>
 
-              <div>
+              {/* <div> */}
                 <button
                   className="delete-button"
-                  onClick={() => deleteLaptop(laptop._id)}
-                >
-                  Delete
-                </button>
-              </div>
+                  onClick={() => deleteGift(gift._id)}
+                >Delete</button>
+              {/* </div> */}
 
             </div>
           </div>
-        </div>
-        <div></div>
-      </div>
-      <div className='reviews-wrapper'>
-        <ReviewForm
-          author={review.author}
-          rating={review.rating}
-          description={review.description}
-          onSubmit={handleSubmit}
-          onChange={handleChange}
-        />
-        <Reviews reviews={laptop.reviews} />
-      </div>
     </Layout>
   );
 };
 
-export default LaptopDetail;
+export default GiftDetail;
