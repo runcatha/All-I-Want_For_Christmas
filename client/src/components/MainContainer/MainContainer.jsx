@@ -76,11 +76,11 @@ export default function MainContainer() {
 
   return (
     <Switch>
-      <Route path='/'>
-        <Home />
-      </Route>
       <Route path='/my-list'>
         <MyWishlist gifts={gifts} />
+      </Route>
+      <Route path='/'>
+        <Home />
       </Route>
       <Route path='/profile'>
         <Profile groups={groups} />
