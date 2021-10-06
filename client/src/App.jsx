@@ -54,8 +54,10 @@ function App() {
           <Route path='/sign-up'>
             <SignUp handleSignUp={handleSignUp} />
           </Route>
+          {/* <Route path='/about-us'>
+            <AboutUs/>
+          </Route> */}
           <Route path='/'>
-            {/* <Home /> */}
             <MainContainer />
           </Route>
         </Switch>

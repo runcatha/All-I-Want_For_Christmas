@@ -9,6 +9,7 @@ import StartAGroup from '../../screens/StartAGroup/StartAGroup';
 import AddGift from '../../screens/AddGift/AddGift';
 import Edit from '../../screens/Edit/Edit';
 import Gift from '../../screens/Gift/Gift';
+import Home from '../../screens/Home/Home'
 
 export default function MainContainer() {
   const [gifts, setGifts] = useState([]);
@@ -75,6 +76,9 @@ export default function MainContainer() {
 
   return (
     <Switch>
+      <Route path='/'>
+        <Home />
+      </Route>
       <Route path='/my-list'>
         <MyWishlist gifts={gifts} />
       </Route>
