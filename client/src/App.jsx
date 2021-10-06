@@ -5,7 +5,7 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import AboutUs from './screens/AboutUs/AboutUs'
 import AddGift from './screens/AddGift/AddGift'
-import Detail from './screens/Detail/Detail'
+import Gift from './screens/Gift/Gift'
 import Edit from './screens/Edit/Edit'
 import GroupProfile from './screens/GroupProfile/GroupProfile'
 import Home from './screens/Home/Home'
@@ -48,10 +48,10 @@ const App = () => {
           <Route path='/group-profile'>
             <GroupProfile user={user} />
           </Route>
-          <Route path='cart'>
+          <Route path='/cart'>
             <Cart user={user} />
           </Route>
-          <Route path='detail'>
+          <Route path='/gift'>
             <Detail user={user} />
           </Route>
           <Route path='add-gift'>
