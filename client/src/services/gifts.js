@@ -24,8 +24,3 @@ export const putGift = async (id, giftData) => {
   const resp = await api.put(`/gifts/${id}`, { gift: giftData });
   return resp.data;
 };
-
-// export const addFlavorToFood = async (flavorId, id) => {
-//   const resp = await api.put(`/flavors/${flavorId}/foods/${id}`);
-//   return resp.data;
-// };

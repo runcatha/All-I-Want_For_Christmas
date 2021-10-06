@@ -2,12 +2,12 @@ import { useState } from 'react';
 
 export default function SignUp(props) {
   const [formData, setFormData] = useState({
-    firstname: '',
-    lastname: '',
+    first_name: '',
+    last_name: '',
     username: '',
     email: '',
     password: '',
-    profileimage: '',
+    image: '',
   });
 
   const handleChange = (e) => {
@@ -16,13 +16,14 @@ export default function SignUp(props) {
       ...prevState,
       [name]: value,
     }));
+    console.log(formData)
   };
 
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        props.handleRegister(formData);
+        props.handleSignUp(formData);
       }}
     >
       <h3>Sign Up</h3>
@@ -30,8 +31,8 @@ export default function SignUp(props) {
         <input
           placeholder='first name'
           type='text'
-          name='firstname'
-          value={formData.firstname}
+          name='first_name'
+          value={formData.first_name}
           onChange={handleChange}
         />
       </label>
@@ -40,8 +41,8 @@ export default function SignUp(props) {
         <input
           placeholder='last name'
           type='text'
-          name='lastname'
-          value={formData.lastname}
+          name='last_name'
+          value={formData.last_name}
           onChange={handleChange}
         />
       </label>
@@ -79,9 +80,9 @@ export default function SignUp(props) {
       <label>
         <input
           placeholder='profile image link'
-          type='link'
-          name='profileimage'
-          value={formData.password}
+          type='text'
+          name='image'
+          value={formData.image}
           onChange={handleChange}
         />
       </label>

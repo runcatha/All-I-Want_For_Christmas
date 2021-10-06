@@ -3,15 +3,17 @@ import { NavLink, Link } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import React from 'react';
 import Sidebar from '../Sidebar/Sidebar'
+import { propTypes } from 'react-bootstrap/esm/Image';
+import { handleLogout } from '../../App'
 
-const Nav = ({ user }) => {
+const Nav = (props) => {
   const authenticatedOptions = (
     <>
       <NavLink className="link" to="/profile">Profile</NavLink>
       <NavLink className="link" to="/my-list">My List</NavLink>
       <NavLink className="link" to="/start-a-group">Start a Group</NavLink>
       <NavLink className="link" to="/cart">Cart</NavLink>
-      <NavLink className="link" to="/log-out">Log Out</NavLink>
+      <NavLink className="link" to="/" onClick={props.handleLogout}>Log Out</NavLink>
     </>
   )
   const unauthenticatedOptions = (
@@ -23,7 +25,6 @@ const Nav = ({ user }) => {
   const alwaysOptions = (
     <>
       <NavLink className="link" to="/about-us">About Us</NavLink>
-      <NavLink className="link" to="/">Home</NavLink>
     </>
   )
 
@@ -37,9 +38,9 @@ const Nav = ({ user }) => {
         </NavLink>
         <div className='nav-block'>
           <div className="links">
-            {user && <div className="link welcome">Welcome, {user.username}</div>}
+            {props.currentUser && <div className="link welcome">Welcome, {props.currentUser.username}</div>}
             {alwaysOptions}
-            {user ? authenticatedOptions : unauthenticatedOptions}
+            {props.currentUser ? authenticatedOptions : unauthenticatedOptions}
           </div>
         </div>
       </div>

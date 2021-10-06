@@ -103,6 +103,9 @@ export default function MainContainer() {
       <Route path='/my-list/:id'>
         <Gift gifts={gifts} handleGiftDelete={handleGiftDelete} />
       </Route>
+      {/* <Route path='/log-out'>
+        <SignOut gifts={gifts} handleGiftDelete={handleGiftDelete} />
+      </Route> */}
     </Switch>
   );
 }
