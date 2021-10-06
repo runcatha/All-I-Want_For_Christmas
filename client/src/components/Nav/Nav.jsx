@@ -22,7 +22,8 @@ const Nav = ({ user }) => {
   )
   const alwaysOptions = (
     <>
-    <NavLink className="link" to="/about-us">About Us</NavLink>
+      <NavLink className="link" to="/about-us">About Us</NavLink>
+      <NavLink className="link" to="/">Home</NavLink>
     </>
   )
 
@@ -42,7 +43,7 @@ const Nav = ({ user }) => {
           </div>
         </div>
       </div>
-      <Sidebar user={user} pageWrapId={"page-wrap"} outerContainerId={"App"} />
+      {/* <Sidebar user={user} pageWrapId={"page-wrap"} outerContainerId={"App"} /> */}
     </nav >
   )
 }

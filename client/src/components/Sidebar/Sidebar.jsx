@@ -80,7 +80,7 @@ export default class Sidebar extends React.Component {
     return (
       // Pass on our props
       <Menu
-        right
+        rightuseHistory
         disableAutoFocus
         isOpen={this.state.menuOpen}
         onStateChange={(state) => this.handleStateChange(state)}

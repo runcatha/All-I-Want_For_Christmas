@@ -1,79 +1,65 @@
 import './App.css';
-import { verifyUser } from './services/users'
-import { useHistory } from 'react-router-dom'
-import { Route, Switch, Redirect } from 'react-router-dom'
+// import { verifyUser } from './services/users'
+import { Route, Switch, Redirect, useHistory } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
-import AboutUs from './screens/AboutUs/AboutUs'
-import AddGift from './screens/AddGift/AddGift'
-import Gift from './screens/Gift/Gift'
-import Edit from './screens/Edit/Edit'
-import GroupProfile from './screens/GroupProfile/GroupProfile'
-import Home from './screens/Home/Home'
-import Login from './screens/Login/Login'
-import MyWishlist from './screens/MyWishlist/MyWishlist'
-import Profile from './screens/Profile/Profile'
-import SignUp from './screens/SignUp/SignUp'
-import StartAGroup from './screens/StartAGroup/StartAGroup'
+import Layout from './components/Layout/Layout';
+import Login from './screens/Login/Login';
+import SignUp from './screens/SignUp/SignUp';
+import MainContainer from './components/MainContainer/MainContainer';
 
-const App = () => {
-  const history = useHistory()
-  const [user, setUser] = useState(null)
+import {
+  loginUser,
+  signUpUser,
+  verifyUser,
+  removeToken,
+} from './services/auth';
+
+function App() {
+  const [currentUser, setCurrentUser] = useState(null);
+  const history = useHistory();
+
   useEffect(() => {
-    const fetchUser = async () => {
-      const user = await verifyUser()
-      user ? setUser(user) : setUser(null)
-    }
-    fetchUser()
-  }, [])
-  const handleRedirect = () => {
-    history.push('/sign-in')
-    alert('Please sign in first')
-}
+    const handleVerify = async () => {
+      const userData = await verifyUser();
+      setCurrentUser(userData);
+    };
+    handleVerify();
+  }, []);
+
+  const handleLogin = async (loginData) => {
+    const userData = await loginUser(loginData);
+    setCurrentUser(userData);
+    history.push('/');
+  };
+
+  const handleSignUp = async (signUpData) => {
+    const userData = await signUpUser(signUpData);
+    setCurrentUser(userData);
+    history.push('/');
+  };
+
+  const handleLogout = () => {
+    setCurrentUser(null);
+    localStorage.removeItem('authToken');
+    removeToken();
+  };
+
   return (
-    <div className="App">
-      <div className=".mega-grid">
+    <div className='App'>
+      <Layout currentUser={currentUser} handleLogout={handleLogout}>
         <Switch>
-        <Route exact path='/'>
-            <Home user={user} />
-          </Route>
-          <Route exact path='/profile'>
-            <Profile user={user} />
-          </Route>
-          <Route path='/my-list'>
-            <MyWishlist user={user} />
-          </Route>
-          <Route path='/start-a-group'>
-            <StartAGroup user={user} />
-          </Route>
-          <Route path='/group-profile'>
-            <GroupProfile user={user} />
-          </Route>
-          <Route path='/cart'>
-            <Cart user={user} />
-          </Route>
-          <Route path='/gift'>
-            <Gift user={user} />
-          </Route>
-          <Route path='add-gift'>
-            <AddGift user={user} />
-          </Route>
-          <Route path='edit-gift'>
-            <Edit user={user} />
-          </Route>
-          <Route path='about-us'>
-            <AboutUs user={user} />
-          </Route>
           <Route path='/log-in'>
-            <Login setUser={setUser} />
+            <Login handleLogin={handleLogin} />
           </Route>
           <Route path='/sign-up'>
-            <SignUp setUser={setUser} />
+            <SignUp handleSignUp={handleSignUp} />
           </Route>
-          <Route path='log-out'>
-            <LogOut setUser={setUser} />
+          <Route path='/'>
+            {/* <Home /> */}
+            <MainContainer />
           </Route>
         </Switch>
-      </div>
+      </Layout>
     </div>
   );
 }

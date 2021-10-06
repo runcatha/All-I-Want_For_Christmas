@@ -1,46 +1,31 @@
-import api from './apiConfig'
+import api from './config';
 
-export const getGifts = async () => {
-  try {
-      const response = await api.get('/gifts')
-      return response.data
-  } catch (error) {
-      throw error
-  }
-}
+export const getAllGifts = async () => {
+  const resp = await api.get('/gifts');
+  return resp.data;
+};
 
-export const getGift = async id => {
-  try {
-      const response = await api.get(`/gifts/${id}`)
-      return response.data
-  } catch (error) {
-      throw error
-  }
-}
+export const getOneGift = async (id) => {
+  const resp = await api.get(`/gifts/${id}`);
+  return resp.data;
+};
 
-export const createGift = async gift => {
-  try {
-      const response = await api.post('/gifts', gift)
-      return response.data
-  } catch (error) {
-      throw error
-  }
-}
+export const postGift = async (giftData) => {
+  const resp = await api.post('/gifts', { gift: giftData });
+  return resp.data;
+};
 
-export const updateGift = async (id, gift) => {
-  try {
-      const response = await api.put(`/gifts/${id}`, gift)
-      return response.data
-  } catch (error) {
-      throw error
-  }
-}
+export const deleteGift = async (id) => {
+  const resp = await api.delete(`/gifts/${id}`);
+  return resp;
+};
 
-export const deleteGift = async id => {
-  try {
-      const response = await api.delete(`/gifts/${id}`)
-      return response.data
-  } catch (error) {
-      throw error
-  }
-}
+export const putGift = async (id, giftData) => {
+  const resp = await api.put(`/gifts/${id}`, { gift: giftData });
+  return resp.data;
+};
+
+// export const addFlavorToFood = async (flavorId, id) => {
+//   const resp = await api.put(`/flavors/${flavorId}/foods/${id}`);
+//   return resp.data;
+// };

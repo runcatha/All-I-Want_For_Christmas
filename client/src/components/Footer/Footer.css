@@ -1,0 +1,14 @@
+.github-linkedIn {
+  grid-area: F;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #6c0503;
+}
+#github {
+  height: 10vh;
+}
+#linkedIn {
+  height: 10vh;
+}

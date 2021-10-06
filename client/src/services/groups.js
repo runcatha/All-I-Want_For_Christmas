@@ -1,6 +1,6 @@
-import api from './apiConfig'
+import api from './config'
 
-export const getGroups = async () => {
+export const getAllGroups = async () => {
   try {
       const response = await api.get('/groups')
       return response.data
@@ -18,7 +18,7 @@ export const getGroup = async id => {
   }
 }
 
-export const createGroup = async group => {
+export const postGroup = async group => {
   try {
       const response = await api.post('/groups', group)
       return response.data
@@ -27,7 +27,7 @@ export const createGroup = async group => {
   }
 }
 
-export const updateGroup = async (id, group) => {
+export const putGroup = async (id, group) => {
   try {
       const response = await api.put(`/groups/${id}`, group)
       return response.data
