@@ -90,7 +90,7 @@ export default function MainContainer() {
       <Route path='/start-a-group'>
         <StartAGroup groups={groups} />
       </Route>
-      <Route path='/group-profile'>
+      <Route path='/groups/:id'>
         <GroupProfile groups={groups} />
       </Route>
       <Route path='/gifts/:id/edit'>

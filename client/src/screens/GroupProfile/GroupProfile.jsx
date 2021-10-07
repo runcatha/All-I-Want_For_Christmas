@@ -1,10 +1,25 @@
 import React from 'react'
 import './GroupProfile.css'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Card } from 'react-bootstrap'
-// import Gift from '../../components/Gift/Gift'
+import { useEffect, useState } from 'react'
+import { getGroup} from '../../services/groups'
 
-export default function Groups(props) {
+export default function GroupProfile(props) {
+
+  const [group, setGroup] = useState(null)
+
+  const {id} = useParams()
+
+  useEffect(() => {
+    const fetchGroup = async () => {
+      const groupData = await getGroup(id);
+      setGroup(groupData);
+    };
+    fetchGroup();
+  }, []);
+
+  if (!group) return <h1>Loading...</h1>
 
   return (
     <>
@@ -17,9 +32,9 @@ export default function Groups(props) {
         </div>
 
     <div className='group-div'>
-      {props.users.map((users) => (
+      {group.users.map((user) => (
         <div  className='listing-user-div' key={user.id}>
-          <Link to={`/gifts/${gift.id}`}>
+          {/* <Link to={`/gifts/${gift.id}`}> */}
             <Card className="card-container" style={{ height: "11rem" }}>
               <Card.Img
                 className="card-img"
@@ -28,11 +43,11 @@ export default function Groups(props) {
                 style={{ height: "9rem"}}
               />
               <Card.Body style={{ height: "7rem" }}>
-                <Card.Title className="card-name">{gift.name}</Card.Title>
-                <Card.Text className="card-price">${gift.price}</Card.Text>
+                <Card.Title className="card-name">{user.name}</Card.Title>
+                {/* <Card.Text className="card-price">${gift.price}</Card.Text> */}
               </Card.Body>
             </Card>
-          </Link>
+          {/* </Link> */}
         </div>
       ))}
         </div>
