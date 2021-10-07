@@ -6,5 +6,7 @@
   align-items: center;
   justify-content: center;
 }
-.home-welcome {
+
+#home-welcome {
+  font-size: 100px;
 }

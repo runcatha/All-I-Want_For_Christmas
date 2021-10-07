@@ -8,8 +8,9 @@ import GroupProfile from '../../screens/GroupProfile/GroupProfile';
 import StartAGroup from '../../screens/StartAGroup/StartAGroup';
 import AddGift from '../../screens/AddGift/AddGift';
 import Edit from '../../screens/Edit/Edit';
-import Gift from '../../screens/Gift/Gift';
+import Gift from '../../screens/GiftDetailpg/GiftDetailpg';
 import Home from '../../screens/Home/Home'
+import AboutUs from '../../screens/AboutUs/AboutUs';
 
 export default function MainContainer() {
   const [gifts, setGifts] = useState([]);
@@ -76,11 +77,11 @@ export default function MainContainer() {
 
   return (
     <Switch>
+      <Route path='/about-us'>
+        <AboutUs />
+      </Route>
       <Route path='/my-list'>
         <MyWishlist gifts={gifts} />
-      </Route>
-      <Route path='/'>
-        <Home />
       </Route>
       <Route path='/profile'>
         <Profile groups={groups} />
@@ -95,14 +96,17 @@ export default function MainContainer() {
         <Edit gifts={gifts} handleGiftUpdate={handleGiftUpdate} />
       </Route>
       <Route path='/my-list/:id'>
-        <Gift gifts={gifts} />
+        <Gift gifts={gifts} handleGiftDelete={handleGiftDelete}/>
       </Route>
       <Route path='/my-list/new'>
         <AddGift handleGiftCreate={handleGiftCreate} />
       </Route>
-      <Route path='/my-list/:id'>
-        <Gift gifts={gifts} handleGiftDelete={handleGiftDelete} />
+      <Route path='/'>
+        <Home />
       </Route>
+      {/* <Route path='/my-list/:id'>
+        <Gift gifts={gifts} handleGiftDelete={handleGiftDelete} />
+      </Route> */}
       {/* <Route path='/log-out'>
         <SignOut gifts={gifts} handleGiftDelete={handleGiftDelete} />
       </Route> */}
