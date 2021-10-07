@@ -11,6 +11,12 @@ const Home = (props) => {
         id='bell'
         alt='bell' />
       <div className='home-welcome'>
+        <Link to='/log-in' id='link-to-login'>
+          <p>Log In</p>
+        </Link>
+        <Link to='/sign-up' id='link-to-signup'>
+          <p>Sign Up</p>
+        </Link>
       </div>
 </div>
   )

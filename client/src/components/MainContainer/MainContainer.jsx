@@ -8,7 +8,7 @@ import GroupProfile from '../../screens/GroupProfile/GroupProfile';
 import StartAGroup from '../../screens/StartAGroup/StartAGroup';
 import AddGift from '../../screens/AddGift/AddGift';
 import Edit from '../../screens/Edit/Edit';
-import Gift from '../../screens/GiftDetailpg/GiftDetailpg';
+import GiftDetailpg from '../../screens/GiftDetailpg/GiftDetailpg';
 import Home from '../../screens/Home/Home'
 import AboutUs from '../../screens/AboutUs/AboutUs';
 
@@ -95,10 +95,10 @@ export default function MainContainer() {
       <Route path='/my-list/:id/edit'>
         <Edit gifts={gifts} handleGiftUpdate={handleGiftUpdate} />
       </Route>
-      <Route path='/my-list/:id'>
-        <Gift gifts={gifts} handleGiftDelete={handleGiftDelete}/>
+      <Route path='/gifts/:id'>
+        <GiftDetailpg gifts={gifts} handleGiftDelete={handleGiftDelete}/>
       </Route>
-      <Route path='/my-list/new'>
+      <Route path='/add-gift'>
         <AddGift handleGiftCreate={handleGiftCreate} />
       </Route>
       <Route path='/'>

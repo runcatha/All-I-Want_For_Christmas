@@ -9,7 +9,12 @@ export default function Gifts(props) {
   return (
     <>
       <div className='wishlist'>
-    <h3>My Wishlist</h3>
+        <h3>My Wishlist</h3>
+        <div className='add-gift'>
+        <Link className="link" to="/add-gift">
+        <button className='add-button'>+</button>
+      </Link>
+        </div>
 
     <div className='wishlist-div'>
       {props.gifts.map((gift) => (
@@ -30,7 +35,7 @@ export default function Gifts(props) {
           </Link>
         </div>
       ))}
-      </div>
+        </div>
       </div>
       </>
   )

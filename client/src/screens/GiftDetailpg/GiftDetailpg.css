@@ -1,17 +1,15 @@
-.gift-div {
-  border: 2px solid #d3d3d3;
-  /* width: 30%; */
-  -webkit-order: 0;
-  -ms-flex-order: 0;
-  order: 0;
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-  -webkit-align-self: auto;
-  -ms-flex-item-align: auto;
-  align-self: auto;
-  align-content: space-around;
-  margin: 15px;
-  width: 14rem;
-  border-radius: 5px;
+.gift-detail {
+  background-image: url("https://i.imgur.com/BvFSnOt.jpg?1");
+  height: 70vh;
+}
+
+.gdpg-name {
+  text-decoration: none;
+  color: #e7ddd2;
+  font-family: "Italianno", cursive;
+  font-size: 100px;
+}
+
+.detail-card {
+  background-color: #fafafa;
 }
