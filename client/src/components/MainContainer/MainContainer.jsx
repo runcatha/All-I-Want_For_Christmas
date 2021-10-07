@@ -48,6 +48,7 @@ export default function MainContainer() {
   const handleGiftDelete = async (id) => {
     await deleteGift(id);
     setGifts((prevState) => prevState.filter((gift) => gift.id !== id));
+    history.push('/my-list');
   };
 
   const handleGroupDelete = async (id) => {
@@ -92,7 +93,7 @@ export default function MainContainer() {
       <Route path='/group-profile'>
         <GroupProfile groups={groups} />
       </Route>
-      <Route path='/my-list/:id/edit'>
+      <Route path='/gifts/:id/edit'>
         <Edit gifts={gifts} handleGiftUpdate={handleGiftUpdate} />
       </Route>
       <Route path='/gifts/:id'>

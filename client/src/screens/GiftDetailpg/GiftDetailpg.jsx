@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getOneGift } from '../../services/gifts';
 import { Link } from 'react-router-dom'
-import { deleteGift } from '../../services/gifts';
+// import { deleteGift } from '../../services/gifts';
 
 export default function GiftDetailpg(props) {
   const [gift, setGift] = useState({});
@@ -37,8 +37,10 @@ export default function GiftDetailpg(props) {
           </div>
           <div className='gift-delete'>
           <button
-                  className="delete-button"
-                  onClick={() => deleteGift(gift._id)}
+              className="delete-button"
+              onClick={() => {
+                props.handleGiftDelete(gift.id)
+              }}
                 >
                   Delete
                 </button>

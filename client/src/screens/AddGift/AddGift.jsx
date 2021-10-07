@@ -12,15 +12,9 @@ export default function AddGift(props) {
 
     const handleChange = (e) => {
       const { name, value } = e.target;
-      // const { image, value } = e.target;
-      // const { price, value } = e.target;
-      // const { buy_link, value } = e.target;
       setFormData((prevState) => ({
         ...prevState,
         [name]: value,
-        // [image]: value,
-        // [price]: value,
-        // [buy_link]: value
       }));
     };
 
