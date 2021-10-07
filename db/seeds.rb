@@ -20,7 +20,7 @@ puts "#{User.count} users created"
 
 puts "#{Gift.count} gifts created"
 
-@krachas = Group.create!(name: 'Krachas!', image: 'dbfjdn', members: 'Cathleen')
+@krachas = Group.create!(name: 'Krachas!', image: 'https://i.imgur.com/hDmWp7M.jpg?1', members: 'Cathleen')
 @groups = Group.all
 
 puts "#{Group.count} groups created!"
