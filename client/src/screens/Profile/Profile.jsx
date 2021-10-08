@@ -15,17 +15,18 @@ export default function Profile(props) {
             id='profile-to-my-list'
           alt='present' />
           </Link>
-      </div>
+        </div>
         <div className='profile-add-group'>
           <Link to='/start-a-group' id='add-group-link'>
           <img src='https://i.imgur.com/yGPCkHm.png'
             id='profile-to-add-group'
           alt='group' />
           </Link>
+        </div>
       </div>
-      </div>
+      <div className='your-groups-with-cards'>
       <div className='groups'>
-        <h1>Your Groups</h1>
+        <h1 id='your-groups-p'>Your Groups</h1>
         <div className='groups-div'>
       {props.groups.map((group) => (
         <div  className='listing-groups-div' key={group.id}>
@@ -44,6 +45,7 @@ export default function Profile(props) {
           </Link>
         </div>
       ))}
+            </div>
       </div>
       </div>
   </div>

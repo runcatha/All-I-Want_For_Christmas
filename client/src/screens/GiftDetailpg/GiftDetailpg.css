@@ -22,4 +22,20 @@
 
 .detail-card {
   background-color: #fafafa;
+  background-color: #fafafa;
+  width: 40%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 23vw;
+}
+
+.gift-edit-delete {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-left: 40%;
+  margin-right: 40%;
+  margin-top: 7vh;
 }

@@ -26,9 +26,10 @@ export default function GroupProfile(props) {
       <div className='group'>
       <div className='group-name'>{group.name}</div>
         <div className='add-member'>
-        {/* <Link className="link" to="/add-group"> */}
         <button onClick={() => {props.handleUserToGroupCreate(group, currentUser)}} className='add-button'>+</button>
-      {/* </Link> */}
+        </div>
+        <div className='remove-group'>
+        <button onClick={() => {props.handleGroupDelete(group, currentUser)}} className='remove-group-button'>-</button>
         </div>
 
     <div className='group-div'>

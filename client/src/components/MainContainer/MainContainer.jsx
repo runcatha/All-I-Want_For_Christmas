@@ -55,6 +55,7 @@ export default function MainContainer(props) {
   const handleGroupDelete = async (id) => {
     await deleteGroup(id);
     setGroups((prevState) => prevState.filter((group) => group.id !== id));
+    history.push('/profile');
   };
 
   const handleGiftUpdate = async (id, giftData) => {
@@ -106,7 +107,8 @@ export default function MainContainer(props) {
       <Route path='/groups/:id'>
         <GroupProfile groups={groups}
           currentUser={props.currentUser}
-          handleUserToGroupCreate={handleUserToGroupCreate} />
+          handleUserToGroupCreate={handleUserToGroupCreate}
+          handleGroupDelete={handleGroupDelete}/>
       </Route>
       <Route path='/gifts/:id/edit'>
         <Edit gifts={gifts} handleGiftUpdate={handleGiftUpdate} />

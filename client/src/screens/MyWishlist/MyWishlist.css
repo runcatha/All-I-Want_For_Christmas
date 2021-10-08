@@ -1,3 +1,7 @@
+#my-wishlist-mw {
+  font-size: 14vh;
+}
+
 .wishlist {
   background-image: url("https://i.imgur.com/z6GaDo4.jpg?1");
   grid-area: C;
@@ -35,11 +39,13 @@
   width: 100%;
 }
 
-.add-button {
-  background-color: #b3d7ec;
+.add-button-mw {
+  background-color: ##e7ddd2;
   border-radius: 5px;
   color: #514538;
   border: none;
+  height: 5vh;
+  width: 4vw;
 }
 
 .wishlist-div {

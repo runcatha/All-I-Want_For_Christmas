@@ -9,10 +9,10 @@ export default function Gifts(props) {
   return (
     <>
       <div className='wishlist'>
-        <h3>My Wishlist</h3>
+        <h1 id='my-wishlist-mw'>My Wishlist</h1>
         <div className='add-gift'>
         <Link className="link" to="/add-gift">
-        <button className='add-button'>+</button>
+        <button className='add-button-mw'>+</button>
       </Link>
         </div>
 
