@@ -1,0 +1,14 @@
+.sign-up-div {
+  background-image: url("https://i.imgur.com/6xORJkd.jpg?1");
+  grid-area: C;
+  height: 90vh;
+  /* height: 100%; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  object-fit: contain;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

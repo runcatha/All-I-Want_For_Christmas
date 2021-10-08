@@ -1,5 +1,4 @@
 import { useState } from 'react'
-// import { postGift } from '../../services/gifts';
 import './AddGift.css'
 
 export default function AddGift(props) {

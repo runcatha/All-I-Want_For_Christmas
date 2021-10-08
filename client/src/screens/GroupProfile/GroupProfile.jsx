@@ -10,7 +10,7 @@ export default function GroupProfile(props) {
   const [group, setGroup] = useState(null)
 
   const {id} = useParams()
-
+  const {currentUser} = props
   useEffect(() => {
     const fetchGroup = async () => {
       const groupData = await getGroup(id);
@@ -27,14 +27,13 @@ export default function GroupProfile(props) {
       <div className='group-name'>{group.name}</div>
         <div className='add-member'>
         {/* <Link className="link" to="/add-group"> */}
-        <button className='add-button'>+</button>
+        <button onClick={() => {props.handleUserToGroupCreate(group, currentUser)}} className='add-button'>+</button>
       {/* </Link> */}
         </div>
 
     <div className='group-div'>
       {group.users.map((user) => (
         <div  className='listing-user-div' key={user.id}>
-          {/* <Link to={`/gifts/${gift.id}`}> */}
             <Card className="card-container" style={{ height: "11rem" }}>
               <Card.Img
                 className="card-img"
@@ -43,11 +42,9 @@ export default function GroupProfile(props) {
                 style={{ height: "9rem"}}
               />
               <Card.Body style={{ height: "7rem" }}>
-                <Card.Title className="card-name">{user.name}</Card.Title>
-                {/* <Card.Text className="card-price">${gift.price}</Card.Text> */}
+              <Card.Title className="card-name">{user.first_name} {user.last_name}</Card.Title>
               </Card.Body>
             </Card>
-          {/* </Link> */}
         </div>
       ))}
         </div>

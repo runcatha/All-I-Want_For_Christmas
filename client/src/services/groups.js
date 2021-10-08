@@ -27,6 +27,14 @@ export const postGroup = async group => {
   }
 }
 
+export const postUserToGroup = async (id) => {
+  try {
+    const response = await api.post(`/groups/${id}/join`)
+  } catch (error) {
+    throw error
+  }
+}
+
 export const putGroup = async (id, group) => {
   try {
       const response = await api.put(`/groups/${id}`, group)

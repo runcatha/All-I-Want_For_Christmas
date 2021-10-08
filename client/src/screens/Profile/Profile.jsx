@@ -17,7 +17,7 @@ export default function Profile(props) {
           </Link>
       </div>
         <div className='profile-add-group'>
-          <Link to='/add-group' id='add-group-link'>
+          <Link to='/start-a-group' id='add-group-link'>
           <img src='https://i.imgur.com/yGPCkHm.png'
             id='profile-to-add-group'
           alt='group' />

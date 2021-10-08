@@ -58,7 +58,7 @@ function App() {
             <AboutUs/>
           </Route> */}
           <Route path='/'>
-            <MainContainer />
+            <MainContainer currentUser={currentUser}/>
           </Route>
         </Switch>
       </Layout>

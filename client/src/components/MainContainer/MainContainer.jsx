@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Switch, Route, useHistory } from 'react-router-dom';
 import { getAllGifts, postGift, deleteGift, putGift } from '../../services/gifts';
-import { getAllGroups, postGroup, deleteGroup, putGroup } from '../../services/groups';
+import { getAllGroups, postGroup, deleteGroup, putGroup, postUserToGroup } from '../../services/groups';
 import MyWishlist from '../../screens/MyWishlist/MyWishlist';
 import Profile from '../../screens/Profile/Profile';
 import GroupProfile from '../../screens/GroupProfile/GroupProfile';
@@ -11,8 +11,9 @@ import Edit from '../../screens/Edit/Edit';
 import GiftDetailpg from '../../screens/GiftDetailpg/GiftDetailpg';
 import Home from '../../screens/Home/Home'
 import AboutUs from '../../screens/AboutUs/AboutUs';
+import { propTypes } from 'react-bootstrap/esm/Image';
 
-export default function MainContainer() {
+export default function MainContainer(props) {
   const [gifts, setGifts] = useState([]);
   const [groups, setGroups] = useState([]);
   const history = useHistory();
@@ -66,6 +67,18 @@ export default function MainContainer() {
     history.push('/my-list');
   };
 
+  const handleUserToGroupCreate = async (group, user) => {
+    console.log(group.id)
+    console.log(user)
+    if (group.users.includes(user)) {
+      alert('Stop trying to break my app')
+    } else {
+      const addUser = await postUserToGroup(group.id);
+      setGroups((prevState) => [...prevState, addUser]);
+      window.location.reload()
+    }
+  }
+
   const handleGroupUpdate = async (id, groupData) => {
     const updatedGroup = await putGroup(id, groupData);
     setGroups((prevState) =>
@@ -88,10 +101,12 @@ export default function MainContainer() {
         <Profile groups={groups} />
       </Route>
       <Route path='/start-a-group'>
-        <StartAGroup groups={groups} />
+        <StartAGroup handleGroupCreate={handleGroupCreate} />
       </Route>
       <Route path='/groups/:id'>
-        <GroupProfile groups={groups} />
+        <GroupProfile groups={groups}
+          currentUser={props.currentUser}
+          handleUserToGroupCreate={handleUserToGroupCreate} />
       </Route>
       <Route path='/gifts/:id/edit'>
         <Edit gifts={gifts} handleGiftUpdate={handleGiftUpdate} />

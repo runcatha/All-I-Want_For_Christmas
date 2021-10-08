@@ -1,14 +1,21 @@
 .home {
-  background-image: url("https://i.imgur.com/iyUUh6o.jpg?1");
-  height: 69vh;
+  background-image: url("https://i.imgur.com/t8bw92f.jpg?1");
+  height: 80vh;
+  /* height: 100%; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
   display: flex;
+  object-fit: contain;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .home-welcome {
-  /* background-image: url("https://i.imgur.com/41IXfju.png"); */
+  background-image: url("https://i.imgur.com/41IXfju.png");
+  height: 20vh;
+  width: 20vw;
 }
 
 #home-welcome {

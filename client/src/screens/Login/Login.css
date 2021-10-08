@@ -1,10 +1,16 @@
 .login-form {
   background-image: url("https://i.imgur.com/iyUUh6o.jpg?1");
-  height: 69vh;
+  grid-area: C;
+  height: 90vh;
+  /* height: 100%; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
   display: flex;
+  object-fit: contain;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 .login {
   font-family: "Italianno", cursive;
