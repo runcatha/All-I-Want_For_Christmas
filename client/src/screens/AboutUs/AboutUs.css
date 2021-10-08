@@ -19,6 +19,7 @@
   flex-direction: row;
   margin-right: 20%;
   margin-left: 20%;
+  filter: opacity(80%);
 }
 
 #about-us-hone {
