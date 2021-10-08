@@ -39,20 +39,12 @@ export default class Sidebar extends React.Component {
 
   authenticatedOptions = (
     <>
-      <NavLink onClick={() => this.closeMenu()} className="link menu-item" to="/profile">
-      Profile
-      </NavLink>
-      <NavLink onClick={() => this.closeMenu()} className="link menu-item" to="/my-list">
-      My List
-      </NavLink>
-      <NavLink onClick={() => this.closeMenu()} className="link menu-item" to="/start-a-group">
-      Start a Group
-      </NavLink>
-      <NavLink onClick={() => this.closeMenu()} className="cart" to="/my-list">
-      Cart
-      </NavLink>
-      <NavLink onClick={() => this.closeMenu()} className="log-out" to="/my-list">
-      Log Out
+      <NavLink className="link" to="/profile">Profile</NavLink>
+      <NavLink className="link" to="/my-list">My List</NavLink>
+      <NavLink className="link" to="/start-a-group">Start a Group</NavLink>
+      <NavLink className="link" to="/cart">Cart</NavLink>
+      <NavLink onClick={() => this.closeMenu()} className="link menu-item" to="/sign-out">
+        Sign Out
       </NavLink>
     </>
   );

@@ -1,3 +1,9 @@
+nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
 .nav {
   grid-area: N;
   display: flex;
@@ -5,6 +11,13 @@
   justify-content: space-between;
   background-color: #6c0503;
 }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 .nav-block {
   width: 50%;
 }
@@ -21,4 +34,18 @@
   flex-direction: row;
   justify-content: space-evenly;
   margin-top: 10%;
+}
+
+@media all and (max-width: 800px) {
+  .nav {
+    flex-direction: row;
+    width: 100%;
+  }
+  .nav-block {
+    flex-direction: column;
+    width: 20%;
+  }
+  .links {
+    display: none;
+  }
 }
