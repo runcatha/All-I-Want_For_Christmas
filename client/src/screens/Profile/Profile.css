@@ -1,7 +1,16 @@
 .profile {
   background-image: url("https://i.imgur.com/ROduM3x.jpg?1");
-  height: 70vh;
   grid-area: C;
+  height: 90vh;
+  /* height: 100%; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  object-fit: contain;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .my-wishlist-and-add-group {
