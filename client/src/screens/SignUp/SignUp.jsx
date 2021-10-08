@@ -22,13 +22,17 @@ export default function SignUp(props) {
 
   return (
     <div className='sign-up-div'>
-    <form
+      <div className='stocking-box'>
+        <div className='sign-up'>
+      <h1 id='sign-up-su'>Sign Up</h1>
+        </div>
+        <div className='sign-up-input'>
+    <form className='form-su'
       onSubmit={(e) => {
         e.preventDefault();
         props.handleSignUp(formData);
       }}
     >
-      <h3>Sign Up</h3>
       <label>
         <input
           placeholder='first name'
@@ -40,7 +44,8 @@ export default function SignUp(props) {
       </label>
       <br />
       <label>
-        <input
+              <input
+                id='last-name-su'
           placeholder='last name'
           type='text'
           name='last_name'
@@ -50,7 +55,8 @@ export default function SignUp(props) {
       </label>
       <br />
       <label>
-          <input
+              <input
+                id='username-su'
           placeholder='Username'
           type='text'
           name='username'
@@ -60,7 +66,8 @@ export default function SignUp(props) {
       </label>
       <br />
       <label>
-        <input
+              <input
+                id='email-su'
           placeholder='email'
           type='text'
           name='email'
@@ -70,7 +77,8 @@ export default function SignUp(props) {
       </label>
       <br />
       <label>
-        <input
+              <input
+                id='password-su'
           placeholder='password'
           type='password'
           name='password'
@@ -80,7 +88,8 @@ export default function SignUp(props) {
       </label>
       <br />
       <label>
-        <input
+              <input
+                id='image-su'
           placeholder='profile image link'
           type='text'
           name='image'
@@ -89,8 +98,10 @@ export default function SignUp(props) {
         />
       </label>
       <br />
-      <button>Welcome!</button>
-      </form>
+      <button id='welcome-su'>Welcome!</button>
+          </form>
+          </div>
+        </div>
       </div>
   );
 }
