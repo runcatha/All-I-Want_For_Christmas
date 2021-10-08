@@ -80,7 +80,7 @@ export default class Sidebar extends React.Component {
       >
         <main id="page-wrap">
           {this.alwaysOptions}
-          {this.props.user ? this.authenticatedOptions : this.unauthenticatedOptions}
+          {this.props.currentUser ? this.authenticatedOptions : this.unauthenticatedOptions}
         </main>
       </Menu>
     )

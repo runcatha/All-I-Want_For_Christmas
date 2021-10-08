@@ -44,7 +44,8 @@ const Nav = (props) => {
           </div>
         </div>
       </div>
-      <Sidebar props={props} pageWrapId={"page-wrap"} outerContainerId={"App"} />
+      <Sidebar props={props} pageWrapId={"page-wrap"} outerContainerId={"App"}
+        currentUser={props.currentUser}/>
     </nav >
   )
 }
