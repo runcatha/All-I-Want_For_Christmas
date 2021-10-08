@@ -23,7 +23,8 @@ export default function AddGift(props) {
       e.preventDefault()
       props.handleGiftCreate(formData);
     }}>
-      <h3>Add Gift</h3>
+        <h1>Add Gift</h1>
+        <div className='add-form'>
       <label>
         <input
           type='text'
@@ -65,6 +66,7 @@ export default function AddGift(props) {
       </label>
       <br/>
       <button>Submit</button>
+      </div>
       </form>
       </div>
   );

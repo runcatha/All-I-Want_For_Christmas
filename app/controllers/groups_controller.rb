@@ -17,9 +17,9 @@ class GroupsController < ApplicationController
   # POST /groups
   def create
     @group = Group.new(group_params)
-    @group.user = @current_user
-
+    
     if @group.save
+      @group.users << @current_user
       render json: @group, status: :created
     else
       render json: @group.errors, status: :unprocessable_entity
@@ -40,7 +40,7 @@ class GroupsController < ApplicationController
     @group.destroy
   end
 
-  # adding user to group method goes here
+  # POST   /groups/:id/join
   def add_user_to_group
     
     @group.users << @current_user
@@ -56,6 +56,6 @@ class GroupsController < ApplicationController
 
   # Only allow a list of trusted parameters through
   def group_params
-    params.require(:group).permit(:name)
+    params.require(:group).permit(:name, :image, :members)
   end
 end
