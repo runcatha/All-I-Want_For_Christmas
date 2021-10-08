@@ -23,7 +23,8 @@ export default function AddGroup(props) {
       e.preventDefault()
       props.handleGroupCreate(formData);
     }}>
-      <h1>Add A Group!</h1>
+        <h1>Add A Group!</h1>
+        <div className='add-group-form'>
       <label>
         <input
           type='text'
@@ -55,6 +56,7 @@ export default function AddGroup(props) {
       </label>
       <br />
       <button>Let's Go!</button>
+      </div>
       </form>
       </div>
   );
