@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import './MyWishlist.css'
+import './Wishlist.css'
 import { Link } from 'react-router-dom'
 import { Card } from 'react-bootstrap'
 
@@ -9,8 +9,8 @@ import Sort from '../../components/Sort/Sort'
 import { AZ, ZA, lowestFirst, highestFirst } from '../../utils/sort'
 
 export default function Gifts(props) {
-  const userGift = props.gifts.filter((gift) => gift.user_id === props.currentUser.id)
-  const [searchResult, setSearchResult] = useState(userGift)
+  const familyGift = props.gifts.filter((gift) => gift.user_id === props.user.id)
+  const [searchResult, setSearchResult] = useState(familyGift)
   const [applySort, setApplySort] = useState(false)
   const [sortType, setSortType] = useState('name-ascending')
 console.log(props.currentUser)

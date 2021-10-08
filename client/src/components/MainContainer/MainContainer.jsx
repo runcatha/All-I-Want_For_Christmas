@@ -11,6 +11,7 @@ import Edit from '../../screens/Edit/Edit';
 import GiftDetailpg from '../../screens/GiftDetailpg/GiftDetailpg';
 import Home from '../../screens/Home/Home'
 import AboutUs from '../../screens/AboutUs/AboutUs';
+import Wishlist from '../../screens/Wishlist/Wishlist';
 import { propTypes } from 'react-bootstrap/esm/Image';
 
 import Search from '../../components/Search/Search'
@@ -18,6 +19,7 @@ import Sort from '../../components/Sort/Sort'
 import { AZ, ZA, lowestFirst, highestFirst } from '../../utils/sort'
 
 export default function MainContainer(props) {
+  const [user, setUser] = useState([]);
   const [gifts, setGifts] = useState([]);
   const [groups, setGroups] = useState([]);
   const history = useHistory();
@@ -28,8 +30,8 @@ export default function MainContainer(props) {
 
   useEffect(() => {
     const fetchGifts = async () => {
-      const WishList = await getAllGifts();
-      setGifts(WishList);
+      const wishList = await getAllGifts();
+      setGifts(wishList);
     };
     fetchGifts();
   }, []);
@@ -98,45 +100,6 @@ export default function MainContainer(props) {
     history.push('/group-profile');
 
   };
-    // const handleSort = (type) => {
-    //   if (type !== '' && type !== undefined) {
-    //     setSortType(type)
-    //   }
-    //   switch (type) {
-    //     case 'name-ascending':
-    //       setSearchResult(AZ(searchResult))
-    //       break
-    //     case 'name-descending':
-    //       setSearchResult(ZA(searchResult))
-    //       break
-    //     case 'price-ascending':
-    //       setSearchResult(lowestFirst(searchResult))
-    //       break
-    //     case 'price-descending':
-    //       setSearchResult(highestFirst(searchResult))
-    //       break
-    //     default:
-    //       break
-    //   }
-    // }
-  
-    // if (applySort) {
-    //   handleSort(sortType)
-    //   setApplySort(false)
-    // }
-  
-    // const handleSearch = (event) => {
-    //   const results = props.gifts.filter((gift) =>
-    //     gift.name.toLowerCase().includes(event.target.value.toLowerCase())
-    //   )
-    //   setSearchResult(results)
-  
-  
-  
-    //   setApplySort(true)
-  
-  
-    // }
 
   return (
     <Switch>
@@ -145,9 +108,11 @@ export default function MainContainer(props) {
       </Route>
       <Route path='/my-list'>
         <MyWishlist gifts={gifts}
-          // handleSearch={handleSearch}
-          // handleSort={handleSort}
-        />
+          currentUser={props.currentUser} />
+          </Route>
+      <Route path='/wishlist'>
+        <Wishlist gifts={gifts}
+          user={props.user} />
       </Route>
       <Route path='/profile'>
         <Profile groups={groups} />

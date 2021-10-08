@@ -36,7 +36,8 @@ export default function GroupProfile(props) {
 
     <div className='group-div'>
       {group.users.map((user) => (
-        <div  className='listing-user-div' key={user.id}>
+        <div className='listing-user-div' key={user.id}>
+          <Link to={`/wishlist/${user.id}`}>
             <Card className="card-container" style={{ height: "11rem" }}>
               <Card.Img
                 className="card-img"
@@ -48,6 +49,7 @@ export default function GroupProfile(props) {
               <Card.Title className="card-name">{user.first_name} {user.last_name}</Card.Title>
               </Card.Body>
             </Card>
+            </Link>
         </div>
       ))}
         </div>

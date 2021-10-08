@@ -1,0 +1,95 @@
+#my-wishlist-mw {
+  font-size: 14vh;
+}
+
+.wishlist {
+  background-image: url("https://i.imgur.com/z6GaDo4.jpg?1");
+  grid-area: C;
+  height: 90vh;
+  /* height: 100%; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  object-fit: contain;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.listing-wishlist-div {
+  border: 2px solid #d3d3d3;
+  background-color: #fafafa;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
+  align-content: space-around;
+  margin: 15px;
+  width: 14rem;
+  border-radius: 5px;
+}
+
+.listing-wishlist-div img {
+  width: 100%;
+}
+
+.add-button-mw {
+  background-color: ##e7ddd2;
+  border-radius: 5px;
+  color: #514538;
+  border: none;
+  height: 5vh;
+  width: 4vw;
+}
+
+.wishlist-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.div.card-container.card {
+  height: 100px;
+}
+
+.add-button {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.add-button:hover {
+  transform: scale(0.9);
+  transition-duration: 0.5s;
+}
+
+@media only screen and (max-width: 769px) {
+  .laptops-div {
+    width: 13rem;
+  }
+}
+
+@media only screen and (max-width: 426px) {
+  .laptops-div {
+    width: 11rem;
+    height: 12rem;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  .laptops-div {
+    width: 153px;
+    height: 11rem;
+  }
+}
