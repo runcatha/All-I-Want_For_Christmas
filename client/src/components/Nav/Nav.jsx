@@ -12,7 +12,6 @@ const Nav = (props) => {
       <NavLink className="link" to="/profile">Profile</NavLink>
       <NavLink className="link" to="/my-list">My List</NavLink>
       <NavLink className="link" to="/start-a-group">Start a Group</NavLink>
-      <NavLink className="link" to="/cart">Cart</NavLink>
       <NavLink className="link" to="/" onClick={props.handleLogout}>Log Out</NavLink>
     </>
   )
@@ -38,7 +37,7 @@ const Nav = (props) => {
         </NavLink>
         <div className='nav-block'>
           <div className="links">
-            {props.currentUser && <div className="link welcome">Welcome, {props.currentUser.username}</div>}
+            {props.currentUser && <div className="link-welcome-nav">Welcome, {props.currentUser.username}</div>}
             {alwaysOptions}
             {props.currentUser ? authenticatedOptions : unauthenticatedOptions}
           </div>

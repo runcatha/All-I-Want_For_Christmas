@@ -19,7 +19,6 @@ import Sort from '../../components/Sort/Sort'
 import { AZ, ZA, lowestFirst, highestFirst } from '../../utils/sort'
 
 export default function MainContainer(props) {
-  const [user, setUser] = useState([]);
   const [gifts, setGifts] = useState([]);
   const [groups, setGroups] = useState([]);
   const history = useHistory();
@@ -110,9 +109,8 @@ export default function MainContainer(props) {
         <MyWishlist gifts={gifts}
           currentUser={props.currentUser} />
           </Route>
-      <Route path='/wishlist'>
-        <Wishlist gifts={gifts}
-          user={props.user} />
+      <Route path='/wishlist/:id'>
+        <Wishlist gifts={gifts}/>
       </Route>
       <Route path='/profile'>
         <Profile groups={groups} />

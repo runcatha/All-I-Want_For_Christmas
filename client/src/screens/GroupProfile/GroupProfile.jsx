@@ -28,17 +28,18 @@ export default function GroupProfile(props) {
         <div className='add-and-remove'>
         <div className='add-member'>
         <button id='add-member-button' onClick={() => {props.handleUserToGroupCreate(group, currentUser)}} className='add-button'>+</button>
-        </div>
-        <div className='remove-group'>
+          </div>
+          {/* delete button to use if too many groups are present */}
+        {/* <div className='remove-group'>
             <button onClick={() => { props.handleGroupDelete(group.id) }} className='remove-group-button'>-</button>
-            </div>
+            </div> */}
         </div>
 
     <div className='group-div'>
       {group.users.map((user) => (
         <div className='listing-user-div' key={user.id}>
           <Link to={`/wishlist/${user.id}`}>
-            <Card className="card-container" style={{ height: "11rem" }}>
+            <Card className="card-container" style={{ height: "12rem" }}>
               <Card.Img
                 className="card-img"
                 variant="top"

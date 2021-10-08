@@ -31,7 +31,7 @@ export default function Profile(props) {
       {props.groups.map((group) => (
         <div  className='listing-groups-div' key={group.id}>
           <Link to={`/groups/${group.id}`}>
-            <Card className="card-container" style={{ height: "11rem" }}>
+            <Card className="card-container" style={{ height: "12rem" }}>
               <Card.Body style={{ height: "7rem" }}>
                 <Card.Title className="card-name">{group.name}</Card.Title>
               <Card.Img

@@ -19,7 +19,7 @@ nav {
 }
 
 .nav-block {
-  width: 50%;
+  width: 80%;
 }
 #home-link {
   height: 18vh;
@@ -34,6 +34,10 @@ nav {
   flex-direction: row;
   justify-content: space-evenly;
   margin-top: 10%;
+}
+.link-welcome-nav {
+  font-family: "Italianno", cursive;
+  font-size: 3vh;
 }
 
 @media all and (max-width: 800px) {

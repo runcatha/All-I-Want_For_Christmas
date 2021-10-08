@@ -75,7 +75,7 @@ console.log(props.currentUser)
       {searchResult.map((gift) => (
         <div  className='listing-wishlist-div' key={gift.id}>
           <Link to={`/gifts/${gift.id}`}>
-            <Card className="card-container" style={{ height: "11rem" }}>
+            <Card className="card-container" style={{ height: "14rem" }}>
               <Card.Img
                 className="card-img"
                 variant="top"

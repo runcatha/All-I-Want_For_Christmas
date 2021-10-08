@@ -1,19 +1,29 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import './Wishlist.css'
+import { useParams } from 'react-router'
 import { Link } from 'react-router-dom'
 import { Card } from 'react-bootstrap'
-
+import { getUser } from '../../services/users'
 import Search from '../../components/Search/Search'
 import Sort from '../../components/Sort/Sort'
 import { AZ, ZA, lowestFirst, highestFirst } from '../../utils/sort'
 
 export default function Gifts(props) {
-  const familyGift = props.gifts.filter((gift) => gift.user_id === props.user.id)
-  const [searchResult, setSearchResult] = useState(familyGift)
+  // const familyGift = props.gifts.filter((gift) => gift.user_id === props.user.id)
+  const [searchResult, setSearchResult] = useState([])
   const [applySort, setApplySort] = useState(false)
   const [sortType, setSortType] = useState('name-ascending')
-console.log(props.currentUser)
+  const { id } = useParams()
+  
+  useEffect(() => {
+    const fetchUser = async () => {
+      const UserWishlist = await getUser(id);
+      setSearchResult(UserWishlist);
+    };
+    fetchUser();
+  }, []);
+
   const handleSort = (type) => {
     if (type !== '' && type !== undefined) {
       setSortType(type)
@@ -75,7 +85,7 @@ console.log(props.currentUser)
       {searchResult.map((gift) => (
         <div  className='listing-wishlist-div' key={gift.id}>
           <Link to={`/gifts/${gift.id}`}>
-            <Card className="card-container" style={{ height: "11rem" }}>
+            <Card className="card-container" style={{ height: "17rem" }}>
               <Card.Img
                 className="card-img"
                 variant="top"

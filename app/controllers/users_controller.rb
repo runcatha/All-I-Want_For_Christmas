@@ -24,7 +24,8 @@ class UsersController < ApplicationController
   
     # GET /users/1
     def show
-      render json: @user, except: :password_digest
+      render json: @user.gifts
+      # render json: @user, except: :password_digest, include: :gifts
     end
 
   private

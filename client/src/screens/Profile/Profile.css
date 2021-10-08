@@ -2,7 +2,7 @@
   background-image: url("https://i.imgur.com/ROduM3x.jpg?1");
   grid-area: C;
   height: 90vh;
-  /* height: 100%; */
+  padding: 5vh 5vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -21,11 +21,11 @@ a {
 }
 
 #your-groups-p {
+  text-align: center;
   text-decoration: none;
   color: #e7ddd2;
   font-family: "Italianno", cursive;
   font-size: 14vh;
-  margin-top: 20vh;
   margin-bottom: 0;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
@@ -50,6 +50,7 @@ a {
 }
 
 #my-list-p {
+  margin-top: 1vh;
   margin-bottom: 0;
   font-family: "Italianno", cursive;
   text-decoration: none;
@@ -79,6 +80,9 @@ a {
   height: 20vh;
 }
 
+.card-conatiner card {
+  height: 12rem;
+}
 .listing-groups-div {
   border: 2px solid #d3d3d3;
   background-color: #fafafa;

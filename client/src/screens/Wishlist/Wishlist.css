@@ -1,12 +1,13 @@
 #my-wishlist-mw {
   font-size: 14vh;
+  padding-top: 10vh;
 }
 
 .wishlist {
   background-image: url("https://i.imgur.com/z6GaDo4.jpg?1");
   grid-area: C;
-  height: 90vh;
-  /* height: 100%; */
+  height: 120vh;
+  padding: 5vh 5vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -15,6 +16,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.wishlist-div {
+  padding-bottom: 20vh;
+  padding-top: 3vh;
+}
+
+.add-gift {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+  border-radius: 5px;
+  margin-top: 3vh;
 }
 
 .listing-wishlist-div {
