@@ -17,20 +17,22 @@ export default function Login(props) {
 
   return (
     <div className='login-form'>
+      <h1>Login</h1>
+      <div className='present-box'>
     <form 
       onSubmit={(e) => {
       e.preventDefault();
       props.handleLogin(formData);
     }}>
-        <img src="https://i.imgur.com/Q8cKrcY.png"
+        {/* <img src="https://i.imgur.com/Q8cKrcY.png"
                       id='present'
-                      alt='present' />
+                      alt='present' /> */}
       <div className='login'>
-      <h1>Login</h1>
       </div>
-      <div className='present-box'>
+      <div className='form-box'>
       <label>
-          <input
+              <input
+                className='login-input'
           placeholder='Username'
           type='text'
           name='username'
@@ -40,7 +42,8 @@ export default function Login(props) {
       </label>
       <br />
       <label>
-          <input
+              <input
+                className='login-input'
             placeholder='Password'
           type='password'
           name='password'
@@ -52,9 +55,10 @@ export default function Login(props) {
         <Link to='/sign-up'
         id='login-to-signup' >Not a member? Sign up here!</Link>
         <br />
-      <button>Welcome!</button>
+      <button id='welcome-login'>Welcome!</button>
         </div>
-      </form>
+        </form>
+        </div>
         </div>
   );
 }
