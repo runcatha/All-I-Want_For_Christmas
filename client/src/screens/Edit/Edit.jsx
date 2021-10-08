@@ -40,9 +40,11 @@ export default function FoodEdit(props) {
       e.preventDefault()
       props.handleGiftUpdate(id, formData);
     }}>
-      <h3>Edit Gift</h3>
+        <h1>Edit Gift</h1>
+        <div className='edit-form'>
       <label>
-        <input
+          <input
+            id='eg-name'
           type='text'
           name='name'
           placeholder='product name'
@@ -52,7 +54,8 @@ export default function FoodEdit(props) {
       </label>
       <br />
       <label>
-        <input
+          <input
+            id='eg-image'
           type='text'
           name='image'
           placeholder='image link'
@@ -62,7 +65,8 @@ export default function FoodEdit(props) {
       </label>
       <br />
       <label>
-        <input
+          <input
+            id='eg-price'
           type='text'
           name='price'
           placeholder='price'
@@ -72,7 +76,8 @@ export default function FoodEdit(props) {
       </label>
       <br />
       <label>
-        <input
+          <input
+            id='eg-buy'
           type='text'
           name='buy_link'
           placeholder='link to purchase'
@@ -81,7 +86,8 @@ export default function FoodEdit(props) {
         />
       </label>
       <br/>
-      <button>Submit</button>
+      <button id='eg-submit'>Submit</button>
+      </div>
       </form>
       </div>
   );

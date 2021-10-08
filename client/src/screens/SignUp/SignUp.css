@@ -50,14 +50,7 @@
   margin-right: 2vw;
 }
 
-/* .form-su {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-} */
-
-#last-name-su {
+.edit-form #last-name-su {
   margin-top: 3vh;
 }
 
