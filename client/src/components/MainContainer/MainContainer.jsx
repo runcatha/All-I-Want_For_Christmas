@@ -13,10 +13,18 @@ import Home from '../../screens/Home/Home'
 import AboutUs from '../../screens/AboutUs/AboutUs';
 import { propTypes } from 'react-bootstrap/esm/Image';
 
+import Search from '../../components/Search/Search'
+import Sort from '../../components/Sort/Sort'
+import { AZ, ZA, lowestFirst, highestFirst } from '../../utils/sort'
+
 export default function MainContainer(props) {
   const [gifts, setGifts] = useState([]);
   const [groups, setGroups] = useState([]);
   const history = useHistory();
+
+  const [searchResult, setSearchResult] = useState(props.gifts)
+  const [applySort, setApplySort] = useState(false)
+  const [sortType, setSortType] = useState('name-ascending')
 
   useEffect(() => {
     const fetchGifts = async () => {
@@ -88,7 +96,47 @@ export default function MainContainer(props) {
       })
     );
     history.push('/group-profile');
+
   };
+    // const handleSort = (type) => {
+    //   if (type !== '' && type !== undefined) {
+    //     setSortType(type)
+    //   }
+    //   switch (type) {
+    //     case 'name-ascending':
+    //       setSearchResult(AZ(searchResult))
+    //       break
+    //     case 'name-descending':
+    //       setSearchResult(ZA(searchResult))
+    //       break
+    //     case 'price-ascending':
+    //       setSearchResult(lowestFirst(searchResult))
+    //       break
+    //     case 'price-descending':
+    //       setSearchResult(highestFirst(searchResult))
+    //       break
+    //     default:
+    //       break
+    //   }
+    // }
+  
+    // if (applySort) {
+    //   handleSort(sortType)
+    //   setApplySort(false)
+    // }
+  
+    // const handleSearch = (event) => {
+    //   const results = props.gifts.filter((gift) =>
+    //     gift.name.toLowerCase().includes(event.target.value.toLowerCase())
+    //   )
+    //   setSearchResult(results)
+  
+  
+  
+    //   setApplySort(true)
+  
+  
+    // }
 
   return (
     <Switch>
@@ -96,7 +144,10 @@ export default function MainContainer(props) {
         <AboutUs />
       </Route>
       <Route path='/my-list'>
-        <MyWishlist gifts={gifts} />
+        <MyWishlist gifts={gifts}
+          // handleSearch={handleSearch}
+          // handleSort={handleSort}
+        />
       </Route>
       <Route path='/profile'>
         <Profile groups={groups} />
