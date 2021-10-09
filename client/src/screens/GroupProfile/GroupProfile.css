@@ -1,8 +1,8 @@
 .group {
   background-image: url("https://i.imgur.com/hM49cHB.jpg?1");
   grid-area: C;
-  height: 90vh;
-  padding: 5vh 5vh;
+  height: 100%;
+  padding: 5% 5%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
