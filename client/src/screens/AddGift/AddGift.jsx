@@ -23,7 +23,7 @@ export default function AddGift(props) {
       e.preventDefault()
       props.handleGiftCreate(formData);
     }}>
-        <h1>Add Gift</h1>
+        <h1 id='add-gift-hOne'>Add Gift</h1>
         <div className='add-form'>
       <label>
         <input
