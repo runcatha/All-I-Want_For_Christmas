@@ -23,12 +23,14 @@ export default function GiftDetailpg(props) {
     <div className='gift-detail'>
       <div className='detail'>
         <div className='gdpg-name'>{gift.name}</div>
-        <div className='detail-card'>
+        <div className='detail-card-container'>
+        <div className='detail-card-gdpg'>
           <div className='detail-img'><img src={gift.image} /></div>
           <div className='detail-price'>${gift.price}</div>
           <div className='detail-buy-link'>
             <a className='linkbutton' href={gift.buy_link}>Link to Buy</a></div>
-        </div>
+          </div>
+          </div>
         <div className='gift-edit-delete'>
           <div className='gift-edit'>
           <Link className="edit-button" to={`/gifts/${gift.id}/edit`}>

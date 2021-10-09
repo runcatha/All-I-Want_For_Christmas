@@ -20,15 +20,20 @@
   font-size: 100px;
 }
 
-.detail-card {
-  background-color: #fafafa;
+.detail-card-gdpg {
   background-color: #fafafa;
   width: 40%;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 18vw;
+  margin-top: 5%;
+}
+
+.detail-card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .gift-edit-delete {
@@ -39,4 +44,39 @@
   margin-left: 40%;
   margin-right: 40%;
   margin-top: 7vh;
+}
+
+@media only screen and (max-width: 900px) {
+  .gdpg-name {
+    font-size: 60px;
+  }
+
+  .detail-card-gdpg {
+    width: 63%;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .gdpg-name {
+    font-size: 40px;
+  }
+
+  .detail-card-gdpg {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .gdpg-name {
+    font-size: 44px;
+    text-align: center;
+  }
+
+  .detail-card-gdpg {
+    width: 86%;
+  }
+
+  .detail-img {
+    width: 100%;
+  }
 }
