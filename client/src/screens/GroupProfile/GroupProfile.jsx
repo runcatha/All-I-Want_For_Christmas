@@ -30,9 +30,9 @@ export default function GroupProfile(props) {
         <button id='add-member-button' onClick={() => {props.handleUserToGroupCreate(group, currentUser)}} className='add-button'>+</button>
           </div>
           {/* delete button to use if too many groups are present */}
-        {/* <div className='remove-group'>
+        <div className='remove-group'>
             <button onClick={() => { props.handleGroupDelete(group.id) }} className='remove-group-button'>-</button>
-            </div> */}
+            </div>
         </div>
 
     <div className='group-div'>

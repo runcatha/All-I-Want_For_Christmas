@@ -49,6 +49,6 @@ class GiftsController < ApplicationController
 
   # Only allow a list of trusted parameters through
   def gift_params
-    params.require(:gift).permit(:name)
+    params.require(:gift).permit(:name, :price, :buy_link, :image)
   end
 end

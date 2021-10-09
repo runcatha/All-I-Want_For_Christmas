@@ -1,6 +1,7 @@
 .home {
   background-image: url("https://i.imgur.com/t8bw92f.jpg?1");
   padding: 5vh 5vh;
+  height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -13,10 +14,10 @@
 
 .home-welcome {
   background-image: url("https://i.imgur.com/41IXfju.png");
-  height: 45vh;
-  width: 33vw;
+  height: 50%;
+  width: 41%;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center center;
   display: flex;
   flex-direction: column;
@@ -31,6 +32,10 @@
   margin-bottom: 0;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
+}
+
+#home-to-sign-up {
+  margin-top: 68%;
 }
 
 .login-home {
@@ -52,4 +57,20 @@
   margin: 0;
   text-decoration: none;
   color: black;
+}
+
+@media only screen and (max-width: 900px) {
+  #home-to-sign-up {
+    margin-top: 68%;
+  }
+}
+
+@media only screen and (max-width: 1010px) {
+  .home-welcome {
+    height: 66%;
+  }
+
+  #home-to-sign-up {
+    margin-top: 68%;
+  }
 }

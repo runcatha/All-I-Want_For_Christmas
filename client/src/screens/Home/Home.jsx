@@ -18,7 +18,7 @@ const Home = (props) => {
           </div>
         <div className='sign-up-home'>
         <Link to='/sign-up' id='link-to-signup'>
-          <p>Sign Up</p>
+          <p id='home-to-sign-up'>Sign Up</p>
           </Link>
           </div>
       </div>
