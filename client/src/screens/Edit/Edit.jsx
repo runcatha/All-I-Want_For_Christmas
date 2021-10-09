@@ -40,7 +40,7 @@ export default function FoodEdit(props) {
       e.preventDefault()
       props.handleGiftUpdate(id, formData);
     }}>
-        <h1>Edit Gift</h1>
+        <h1 id='edit-gift-hOne'>Edit Gift</h1>
         <div className='edit-form'>
       <label>
           <input
