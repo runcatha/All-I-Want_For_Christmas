@@ -66,16 +66,18 @@ console.log(props.currentUser)
         <div className='add-gift'>
     <Sort onSubmit={handleSubmit} handleSort={handleSort} />
       <Search onSubmit={handleSubmit} handleSearch={handleSearch} />
-        <Link className="link" to="/add-gift">
+          <div className='add-gift-button'>
+          <Link className="link" to="/add-gift">
         <button className='add-button-mw'>+</button>
       </Link>
+        </div>
         </div>
 
     <div className='wishlist-div'>
       {searchResult.map((gift) => (
         <div  className='listing-wishlist-div' key={gift.id}>
           <Link to={`/gifts/${gift.id}`}>
-            <Card className="card-container" style={{ height: "14rem" }}>
+            <Card className="card-container" style={{ height: "17rem" }}>
               <Card.Img
                 className="card-img"
                 variant="top"

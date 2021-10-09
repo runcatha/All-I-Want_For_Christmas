@@ -10,3 +10,7 @@
 .option {
   outline: none;
 }
+
+#sort-by-lable {
+  margin-right: 1vw;
+}

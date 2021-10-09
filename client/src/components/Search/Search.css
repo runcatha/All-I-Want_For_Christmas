@@ -1,16 +1,19 @@
 .search-input {
   outline: none;
-  width: 40%;
-  padding-top: 5px;
+  height: 5vh;
+  width: 18vw;
+  padding-top: 3px;
   padding-bottom: 5px;
   border-radius: 5px;
   border-color: #fafafa;
 }
 
 .search-form {
-  margin-bottom: 20px;
   border-radius: 5px;
-  border-color: #fafafa;
+  color: #514538;
+  border: none;
+  height: 7vh;
+  width: 5vw;
 }
 
 @media only screen and (max-width: 426px) {
