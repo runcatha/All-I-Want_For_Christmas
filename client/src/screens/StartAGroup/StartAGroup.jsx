@@ -29,7 +29,7 @@ export default function AddGroup(props) {
         <input
           type='text'
           name='name'
-          placeholder='product name'
+          placeholder='group name'
           value={formData.name}
           onChange={handleChange}
         />
@@ -44,7 +44,7 @@ export default function AddGroup(props) {
           onChange={handleChange}
         />
       </label>
-      <br />
+      {/* <br />
       <label>
         <input
           type='text'
@@ -53,7 +53,7 @@ export default function AddGroup(props) {
           value={formData.members}
           onChange={handleChange}
         />
-      </label>
+      </label> */}
       <br />
       <button>Let's Go!</button>
       </div>
