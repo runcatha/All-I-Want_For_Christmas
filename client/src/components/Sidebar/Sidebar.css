@@ -4,7 +4,7 @@
   display: none;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 700px) {
   /* Position and sizing of burger button */
   .bm-burger-button {
     position: fixed;

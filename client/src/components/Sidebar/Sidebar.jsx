@@ -42,10 +42,10 @@ export default class Sidebar extends React.Component {
       <NavLink className="link" to="/profile">Profile</NavLink>
       <NavLink className="link" to="/my-list">My List</NavLink>
       <NavLink className="link" to="/start-a-group">Start a Group</NavLink>
-      <NavLink className="link" to="/cart">Cart</NavLink>
       <NavLink onClick={() => this.closeMenu()} className="link menu-item" to="/sign-out">
         Sign Out
       </NavLink>
+       {/* <NavLink className="link" to="/" onClick={props.handleLogout}>Log Out</NavLink> */}
     </>
   );
 

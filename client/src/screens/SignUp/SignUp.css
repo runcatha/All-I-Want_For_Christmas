@@ -1,7 +1,8 @@
 .sign-up-div {
   background-image: url("https://i.imgur.com/6xORJkd.jpg?1");
   grid-area: C;
-  padding: 5vh 5vh;
+  height: 100vh;
+  padding: 5% 5%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -25,8 +26,8 @@
 
 .stocking-box {
   background-image: url("https://i.imgur.com/ENxYW4v.png");
-  height: 93vh;
-  width: 41vw;
+  height: 94vh;
+  width: 48vw;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -49,7 +50,7 @@
   margin-right: 2vw;
 }
 
-.edit-form #last-name-su {
+#last-name-su {
   margin-top: 3vh;
 }
 
